@@ -76,7 +76,7 @@ Push changes to the `main` branch to trigger the GitHub Actions pipeline.
 
 ## Live Application
 
-http://3.25.166.129:3000/health
+curl -i http://3.25.166.129:3000/health
 
 ## Author
 
