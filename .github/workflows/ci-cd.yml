@@ -62,9 +62,9 @@ jobs:
         run: |
           docker tag \
           express-ts-app:${{ github.sha }} \
-          ${{ secrets.DOCKER_USERNAME }}/express-ts-app:${{ github.sha }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/express-ts-app:${{ github.sha }}
           docker push \
-          ${{ secrets.DOCKER_USERNAME }}/express-ts-app:${{ github.sha }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/express-ts-app:${{ github.sha }}
   deploy:
     name: Deploy Application
     needs: docker
