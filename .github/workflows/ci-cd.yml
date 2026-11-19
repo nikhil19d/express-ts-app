@@ -1,11 +1,11 @@
 name: Express Typescript CI/cap_drop
 on:
   push:
-    branch:
+    branches:
       - main
 
   pull_request:
-    branch:
+    branches:
       - main
 jobs:
   test:
@@ -20,13 +20,13 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        uses: npm ci
+        run: npm ci
       - name: Typescript type checking
-        uses: npm run typechecks
+        run: npm run typecheck
       - name: ESLint
-        uses: npm run lint
+        run: npm run lint
       - name: Jest Test
-        uses: npm test
+        run: npm test
   docker:
     name: Docker Build and Security Scan
     needs: test
@@ -68,7 +68,7 @@ jobs:
   deploy:
     name: Deploy Application
     needs: docker
-    if: github.event_name == "push"
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Deploy and Health check
@@ -80,7 +80,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           envs: IMAGE
-          scripts: |
+          script: |
             cd /opt/express-ts-app
             PREVIOUS_IMAGE=$(grep '^IMAGE=' .env | cut -d= -f2-)
             echo "IMAGE=$IMAGE" > .env
