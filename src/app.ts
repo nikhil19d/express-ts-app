@@ -6,6 +6,30 @@ const app: Express = express()
 
 app.use(express.json())
 
+app.get("/", (_req: Request, res: Response) => {
+  return res.status(200).json({
+    success: "ok",
+    api: [
+      {
+        method: "GET",
+        path: "/"
+      },
+      {
+        method: "GET",
+        path: "/health"
+      },
+      {
+        method: "POST",
+        path: "/event",
+        bodyType: {
+          event: "string",
+          userId: "number"
+        }
+      }
+    ]
+  })
+})
+
 app.get("/health", (_req: Request, res: Response) => {
   return res.status(200).json({
     status: "healthy",
