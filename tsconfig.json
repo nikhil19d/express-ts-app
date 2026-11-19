@@ -12,6 +12,7 @@
     "types": [
       "node",
       "jest"
-    ]
+    ],
+    "isolatedModules": true
   }
 }
