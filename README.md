@@ -1,6 +1,7 @@
 # Automated CI/CD Pipeline – Express TypeScript Application
 
-[![CI/CD Pipeline](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/actions/workflows/ci-cd.yml)
+[![CI/CD Pipeline](https://github.com/nikhil19d/express-ts-app/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/nikhil19d/express-ts-app/actions/workflows/ci-cd.yml)
+![GitHub Actions Pipeline Run](assets/workflow-run.png)
 
 ## Project Overview
 
